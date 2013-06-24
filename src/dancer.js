@@ -16,6 +16,7 @@ Dancer.prototype = {
   //$node: $('<span class="dancer"></span>'),
   step: function() {
     alert('steppin!');
+  //  debugger;
     setTimeout(this.step, timeBetweenSteps);
   },
   setPosition: function(top, left) {
