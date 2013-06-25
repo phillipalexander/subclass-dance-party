@@ -12,6 +12,7 @@ BlinkyDancer.prototype.step = function() {
   this.$node.toggle();
 };
 
+
 //  return BlinkyDancer;
 //};
 /*// parent class constructor

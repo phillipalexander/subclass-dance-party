@@ -6,6 +6,7 @@
   <script src="lib/jquery.js"></script>
   <script src="src/dancer.js"></script>
   <script src="src/blinkyDancer.js"></script>
+  <script src="src/bouncyDancer.js"></script>
 </head>
 <body>
 
@@ -14,7 +15,7 @@
     <a href="#" class="addDancerButton" data-dancer-maker-function-name="BlinkyDancer">add a dancer</a>
 
     <!--addBouncerButtun -->
-    <a href="#" class="addBouncerButton" data-bouncer-maker-function-name="BouncyDancer">add a bouncy dancer</a>
+    <a href="#" class="addDancerButton" data-dancer-maker-function-name="BouncyDancer">add a bouncy dancer</a>
 
 
   </div>
@@ -22,6 +23,8 @@
   <script>
   $(document).ready(function() {
     window.dancers = [];
+
+    /*==========  BlinkyDancer  ==========*/
 
     $(".addDancerButton").on("click", function(event) {
       var dancerMakerFunctionName = $(this).data("dancer-maker-function-name");
@@ -35,23 +38,28 @@
       $('body').append(dancer.$node);
     });
 
-    $(".addBouncerButton").on("click", function(event) {
-      var bouncerMakerFunctionName = $(this).data("bouncer-maker-function-name");
+    // /*==========  BouncyDancer  ==========*/
 
-      var bouncerMakerFunction = window[bouncerMakerFunctionName];
-      var danceTypes = ["flash", "shake", "bounce", "tada", "swing", "wobble", "wiggle", "pulse"]
-      var entranceTypes = ["bounceIn", "bounceInUp", "bounceInDown", "bounceInLeft", "bounceInRight"]
-      startingEvent = danceTypes[Math.floor(danceTypes.length * Math.random())];
-      entrance = entranceTypes[Math.floor(entranceTypes.length * Math.random())];
-      var bouncer = new bouncerMakerFunction(
+    // $(".addBouncerButton").on("click", function(event) {
+    //   debugger;
+    //   var bouncerMakerFunctionName = $(this).data("bouncer-maker-function-name");
 
-      $("body").height() * Math.random(),
-        $("body").width() * Math.random(),
-        Math.random() * 1000);
+    //   var bouncerMakerFunction = window[bouncerMakerFunctionName];
+    //   var danceTypes = ["flash", "shake", "bounce", "tada", "swing", "wobble", "wiggle", "pulse"]
+    //   var entranceTypes = ["bounceIn", "bounceInUp", "bounceInDown", "bounceInLeft", "bounceInRight"]
+    //   var startingEvent = danceTypes[Math.floor(danceTypes.length * Math.random())];
+    //   var entrance = entranceTypes[Math.floor(entranceTypes.length * Math.random())];
+    //   var bouncer = new bouncerMakerFunction(
+    //     $("body").height() * Math.random(),
+    //     $("body").width() * Math.random(),
+    //     Math.random() * 1000,
+    //     entrance,
+    //     startingEvent
+    //   );
 
-      $('body').append(dancer.$node);
-      
-    });
+    //   $('body').append(dancer.$node);
+
+    // });
   });
 </script>
 

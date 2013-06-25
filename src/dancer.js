@@ -1,4 +1,4 @@
-var Dancer = function(top, left, timeBetweenSteps, entrance, startingEvent) {
+var Dancer = function(top, left, timeBetweenSteps) {
   this.$node = $('<span class="dancer"></span>');
   this.step();
   this.setPosition(top, left);
@@ -18,7 +18,10 @@ Dancer.prototype = {
       left: left
     };
     this.$node.css(styleSettings);
-  },
-  animate: function(){
   }
+  // animate: function(entrance, startingEvent) {
+  //   this.$node.addClass(entrance);
+  //   // this.$node.removeClass(entrance);
+  //   // this.$node.addClass(startingEvent);
+  // }
 };
