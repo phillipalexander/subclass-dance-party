@@ -1,13 +1,13 @@
 var BlinkyDancer = function(top, left, timeBetweenSteps) {
-  //var BlinkyDancer = new Dancer(top, left, timeBetweenSteps);
+  var newDancer = Dancer.call(this, top, left, timeBetweenSteps);
   // BlinkyDancer.call(this, top);
   // BlinkyDancer.call(this, left);
   // BlinkyDancer.call(this, timeBetweenSteps);
-  //debugger;
+//  debugger;
   this.timeBetweenSteps = timeBetweenSteps;
   this.top = top;
   this.left = left;
-  this.$node = $('<span class="dancer"></span>');
+//  this.$node = $('<span class="dancer"></span>');
 
   // we plan to overwrite the step function below, but we still want the superclass step behavior to work,
   // so we must keep a copy of the old version of this function
