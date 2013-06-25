@@ -4,14 +4,20 @@ var BlinkyDancer = function(top, left, timeBetweenSteps) {
   this.top = top;
   this.left = left;
 };
+// BlinkyDancer.prototype = Object.create(Dancer.prototype);
+// BlinkyDancer.prototype.constructor = BlinkyDancer;
+// BlinkyDancer.prototype.oldStep = Dancer.prototype.step;
+// BlinkyDancer.prototype.step = function() {
+//   this.oldStep();
+//   this.$node.toggle();
+// };
+
 BlinkyDancer.prototype = Object.create(Dancer.prototype);
 BlinkyDancer.prototype.constructor = BlinkyDancer;
-BlinkyDancer.prototype.oldStep = Dancer.prototype.step;
 BlinkyDancer.prototype.step = function() {
-  this.oldStep();
+  Dancer.prototype.step.call(this);
   this.$node.toggle();
 };
-
 
 //  return BlinkyDancer;
 //};

@@ -18,10 +18,15 @@ Dancer.prototype = {
       left: left
     };
     this.$node.css(styleSettings);
+  },
+  animate: function(entrance, startingEvent, danceTypes) {
+    var that = this;
+    setInterval(function(){
+      that.$node.removeClass(entrance);
+      that.$node.addClass(startingEvent);
+      entrance = startingEvent;
+      startingEvent = danceTypes[Math.floor(danceTypes.length * Math.random())];
+   //   that.animate(entrance, startingEvent, danceTypes);
+    }, 500);
   }
-  // animate: function(entrance, startingEvent) {
-  //   this.$node.addClass(entrance);
-  //   // this.$node.removeClass(entrance);
-  //   // this.$node.addClass(startingEvent);
-  // }
 };
