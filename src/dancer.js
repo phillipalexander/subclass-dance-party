@@ -18,8 +18,7 @@ Dancer.prototype = {
       left: left
     };
     this.$node.css(styleSettings);
-  }
+  },
   animate: function(){
-
   }
 };
