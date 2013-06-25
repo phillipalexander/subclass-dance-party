@@ -1,24 +1,26 @@
-var makeBlinkyDancer = function(top, left, timeBetweenSteps) {
-  //var makeBlinkyDancer = new Dancer(top, left, timeBetweenSteps);
-  // makeBlinkyDancer.call(this, top);
-  // makeBlinkyDancer.call(this, left);
-  // makeBlinkyDancer.call(this, timeBetweenSteps);
+var BlinkyDancer = function(top, left, timeBetweenSteps) {
+  //var BlinkyDancer = new Dancer(top, left, timeBetweenSteps);
+  // BlinkyDancer.call(this, top);
+  // BlinkyDancer.call(this, left);
+  // BlinkyDancer.call(this, timeBetweenSteps);
   //debugger;
   this.timeBetweenSteps = timeBetweenSteps;
   this.top = top;
   this.left = left;
+  this.$node = $('<span class="dancer"></span>');
+
   // we plan to overwrite the step function below, but we still want the superclass step behavior to work,
   // so we must keep a copy of the old version of this function
-  //var oldStep = makeBlinkyDancer.prototype.step;
+  //var oldStep = BlinkyDancer.prototype.step;
   // this.oldStep = Dancer.prototype.step.call(this);
-    //  return makeBlinkyDancer;
+    //  return BlinkyDancer;
 };
-  //makemakeBlinkyDancer.prototype{
+  //makeBlinkyDancer.prototype{
  //   debugger;
-  makeBlinkyDancer.prototype = new Dancer();
-  makeBlinkyDancer.prototype.constructor = makeBlinkyDancer;
-  makeBlinkyDancer.prototype.oldStep = Dancer.prototype.step;
-  makeBlinkyDancer.prototype.step = function() {
+  BlinkyDancer.prototype = new Dancer();
+  BlinkyDancer.prototype.constructor = BlinkyDancer;
+  BlinkyDancer.prototype.oldStep = Dancer.prototype.step;
+  BlinkyDancer.prototype.step = function() {
     this.oldStep();
     alert('blinky steppin!');
     /* toggle() is a jQuery method to show/hide the <span> tag.
@@ -27,7 +29,7 @@ var makeBlinkyDancer = function(top, left, timeBetweenSteps) {
     this.$node.toggle();
   };
 
-// var makeBlinkyDancer = function(top, left, timeBetweenSteps){
+// var BlinkyDancer = function(top, left, timeBetweenSteps){
 //   var blinkyDancer = makeDancer(top, left, timeBetweenSteps);
 
 //   // we plan to overwrite the step function below, but we still want the superclass step behavior to work,
@@ -50,7 +52,7 @@ var makeBlinkyDancer = function(top, left, timeBetweenSteps) {
 
 
 
-  //  return makeBlinkyDancer;
+  //  return BlinkyDancer;
   //};
   /*// parent class constructor
 var Animal = function (location) {
