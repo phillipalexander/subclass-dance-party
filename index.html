@@ -9,25 +9,31 @@
   <script src="src/bouncyDancer.js"></script>
   <script src="http://underscorejs.org/underscore.js"></script>
  <!-- <script src="src/seizureMode.js"></script> -->
+
+ <link href="data:image/x-icon;base64,AAABAAEAEBAAAAAAAABoBQAAFgAAACgAAAAQAAAAIAAAAAEACAAAAAAAAAEAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB//gAAf/4AAHmeAABX6gAAUAoAAEACAABkJgAAcA4AAHgeAAB37gAAf/4AAH/+AAB//gAAf/4AAAAAAAA=" rel="icon" type="image/x-icon" />
 </head>
 <body>
 
   <div class="topbar">
-    <span class="title">object dance party</span>
-    <a href="#" class="addDancerButton" data-dancer-maker-function-name="BlinkyDancer">add a dancer</a>
+    <audio src="http://dc438.4shared.com/img/838879501/80eaa806/dlink__2Fdownload_2FteVbABaQ_3Ftsid_3D00000000-000000-00000000/preview.mp3" preload='auto' autoplay="autoplay" id="tunez"></audio>
+    <span class="title">j00 can haz 1nvadurz ravurz!1!111!</span>
+    <a href="#" class="addDancerButton" data-dancer-maker-function-name="BlinkyDancer">failz0rz blinky dancer++?</a>
 
     <!--addBouncerButtun -->
-    <a href="#" class="addDancerButton" data-dancer-maker-function-name="BouncyDancer">add a bouncy dancer</a>
-    <a href="#" class="addDancerButton" data-dancer-maker-function-name="SeizureDancer">have a seizure?</a>
+    <a href="#" class="addDancerButton" data-dancer-maker-function-name="BouncyDancer">maek bouncy-vaedur</a>
+    <a href="#" class="addDancerButton" data-dancer-maker-function-name="SeizureDancer">have a seizure.</a>
+    <a href="#" class="addDancerButton" data-dancer-maker-function-name="InvaderDancer">maek supr sw33t scrolly-invdaer!</a>
 
 
   </div>
 
   <script>
   $(document).ready(function() {
-    window.dancers = [];
+    var muziq = document.getElementById("tunez");
+    muziq.volume = 0.125;
+  //  window.dancers = [];
 
-    /*==========  BlinkyDancer  ==========*/
+    /*==========  Dancerz  ==========*/
 
     $(".addDancerButton").on("click", function(event) {
       var dancerMakerFunctionName = $(this).data("dancer-maker-function-name");
@@ -40,36 +46,7 @@
 
       $('body').append(dancer.$node);
     });
-
-    // /*==========  BouncyDancer  ==========*/
-
-    // $(".addBouncerButton").on("click", function(event) {
-    //   debugger;
-    //   var bouncerMakerFunctionName = $(this).data("bouncer-maker-function-name");
-
-    //   var bouncerMakerFunction = window[bouncerMakerFunctionName];
-    //   var danceTypes = ["flash", "shake", "bounce", "tada", "swing", "wobble", "wiggle", "pulse"]
-    //   var entranceTypes = ["bounceIn", "bounceInUp", "bounceInDown", "bounceInLeft", "bounceInRight"]
-    //   var startingEvent = danceTypes[Math.floor(danceTypes.length * Math.random())];
-    //   var entrance = entranceTypes[Math.floor(entranceTypes.length * Math.random())];
-    //   var bouncer = new bouncerMakerFunction(
-    //     $("body").height() * Math.random(),
-    //     $("body").width() * Math.random(),
-    //     Math.random() * 1000,
-    //     entrance,
-    //     startingEvent
-    //   );
-
-    //   $('body').append(dancer.$node);
-
-    // });
   });
-</script>
-<script>
-  gradientBackground = {
-    'background': '-webkit-radial-gradient(55%, 60%, circle closest-corner, red, green 20%, yellow 70%, black)'
-  };
-  this.$('body').css(gradientBackground);
 </script>
 </body>
 </html>

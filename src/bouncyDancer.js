@@ -7,6 +7,7 @@ var BouncyDancer = function(top, left, eventFrequency) {
 
   var danceTypes = ["flash", "shake", "bounce", "tada", "swing", "wobble", "wiggle", "pulse"];
   var entranceTypes = ["bounceIn", "bounceInUp", "bounceInDown", "bounceInLeft", "bounceInRight", "lightSpeedIn", "rollIn"];
+  var exitTypes = ["bounceOut", "bounceOutUp", "bounceOutDown", "bounceOutLeft", "bounceOutRight", "rotateOut", "rotateOutUpLeft", "rotateOutDownLeft", "rotateOutUpRight", "rotateOutDownRight", "lightSpeedOut"]
   var startingEvent = danceTypes[Math.floor(danceTypes.length * Math.random())];
   var entrance = entranceTypes[Math.floor(entranceTypes.length * Math.random())];
   //debugger;
@@ -19,17 +20,17 @@ var BouncyDancer = function(top, left, eventFrequency) {
     invaderColor.push(val + " " + color);
   });
   invaderColor = invaderColor.join(", ");
-  var invaderSize = Math.floor(Math.random() * 30) + "px";
+  var invaderSize = Math.floor(3 * Math.log(Math.random() * 30) + 3) + "px";
   var mutatedCss = {
     'box-shadow': invaderColor,
     'font-size': invaderSize
   };
   this.$node.css(mutatedCss);
-  this.animate(entrance, startingEvent, danceTypes);
+  this.animate(entrance, startingEvent, danceTypes, exitTypes);
 };
 
 BouncyDancer.prototype = Object.create(Dancer.prototype);
 BouncyDancer.prototype.constructor = BouncyDancer;
-BouncyDancer.prototype.animate = function(entrance, startingEvent, danceTypes) {
-  Dancer.prototype.animate.call(this, entrance, startingEvent, danceTypes);
+BouncyDancer.prototype.animate = function(entrance, startingEvent, danceTypes, exitTypes) {
+  Dancer.prototype.animate.call(this, entrance, startingEvent, danceTypes, exitTypes);
 };

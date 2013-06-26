@@ -19,9 +19,17 @@ Dancer.prototype = {
     };
     this.$node.css(styleSettings);
   },
-  animate: function(entrance, startingEvent, danceTypes) {
+  animate: function(entrance, startingEvent, danceTypes, exitTypes) {
+    var exitProbability = 1/20;
     var that = this;
     setInterval(function(){
+      var exitChance = Math.pow(($('.space-invader').length) * Math.random(), 0.8) + 1;
+      if(exitChance < exitProbability * $('.space-invader').length) {
+        var exit = exitTypes[Math.floor(exitTypes.length * Math.random())];
+        that.$node.removeClass(entrance);
+        that.$node.addClass(exit);
+        setTimeout(function(){that.$node.remove()}, 1000);
+      }
       that.$node.removeClass(entrance);
       that.$node.addClass(startingEvent);
       entrance = startingEvent;
@@ -30,3 +38,4 @@ Dancer.prototype = {
     }, 500);
   }
 };
+// bit.ly/1223oZK
