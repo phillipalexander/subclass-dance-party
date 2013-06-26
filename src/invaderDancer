@@ -1,0 +1,4 @@
+var InvaderDancer = function(){
+  var newDancer = Dancer.call(this, top, left, timeBetweenSteps);
+  $('body').append($('<div>').addClass("space").append($('<div>').addClass("invader")));
+};
